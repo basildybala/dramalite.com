@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
-
+require('dotenv').config()
 mongoose.set("strictQuery", false);
-mongoose.connect('mongodb://localhost:27017/movieshub')
+mongoose.connect(process.env.MONGODB)
 .then(()=>{
     console.log("mongoDb SucessFully Running ")
 }).catch((err)=>{

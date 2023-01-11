@@ -8,7 +8,7 @@ const flash=require('connect-flash')
 var session=require('express-session');
 var cookieParser = require('cookie-parser')
 const cors =require('cors');
-
+const path =require('path')
 //ROUTES SETUP
 const homeRoutes=require('./routes/home')
 const authRoutes=require('./routes/auth')
@@ -24,6 +24,10 @@ app.use(cors())
 app.use(morgan("dev"))
 require("express-async-errors");
 app.locals.user=null
+
+app.set('views', path.join(__dirname, 'views'));
+
+
 
 // set view engine
 app.set("view engine", "ejs")
