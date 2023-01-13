@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/css/actor.css">
+    <link rel="stylesheet" href="/css/actor.css">
 
 
     <div class="actor-main">
@@ -30,7 +30,7 @@
                         <img class="lazy=photo" data-src="/<%= celebrity.profilePic %>" alt=" <%= celebrity.actorname %> Profile"
                         srcset="">
                     <% }else { %>
-                        <img class="lazy-photo" data-src="../../public/images/actor/id/<%= celebrity._id %>.jpg" alt=" <%= celebrity.actorname %> Profile"
+                        <img class="lazy-photo" data-src="/images/actor/id/<%= celebrity._id %>.jpg" alt=" <%= celebrity.actorname %> Profile"
                         srcset="">
                     <% } %>
                    
@@ -180,7 +180,7 @@
                                     alt=" <%= moviesList[i].name %> Poster" srcset="">
                                 <% }else { %>
                                     <img class="lazy-photo"
-                                        data-src="../../public/images/movies/id/<%= moviesList[i]._id  %>.jpg"
+                                        data-src="/images/movies/id/<%= moviesList[i]._id  %>.jpg"
                                         alt=" <%= moviesList[i].name %> poster" srcset="">
                             <% } %>
                         </div>

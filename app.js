@@ -33,8 +33,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs")
 
 //Public Folder Set Up
-app.use('/public', express.static('public'))
-
+//app.use('/public', express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret:'secret',
     cookie:{maxAge:60000},

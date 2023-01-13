@@ -3,8 +3,8 @@
  <title><%= movie.name %> Movie Reviews and rating -Dramalite</title>
 <meta name="description" content="<%= movie.engname %> movie reviews and sotry cast rewatch value rating">
 
- <link rel="stylesheet" href="../../public/css/movie.css">
- <link rel="stylesheet" href="../../public/css/auth.css">
+ <link rel="stylesheet" href="/css/movie.css">
+ <link rel="stylesheet" href="/css/auth.css">
 
    <!--------------------REVIEW SECATION------------------------------>
    <div class="other-sec">
@@ -16,7 +16,7 @@
             <% if(movie.moviePoster ) { %>
                 <img data-src="/<%= movie.moviePoster %>" alt=" <%= movie.name %> Poster" class="lazy-photo">
                 <% }else { %>
-                    <img data- src="../../public/images/movies/poster/mission.jpg" alt=" <%= movie.name %> Poster"
+                    <img data- src="/images/movies/poster/mission.jpg" alt=" <%= movie.name %> Poster"
                         class="lazy-photo">
             <% } %>
         </div>

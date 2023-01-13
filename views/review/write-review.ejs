@@ -2,8 +2,8 @@
 
 <title><%= movie.name %> Movie Write Review and rating -Dramalite</title>
 <meta name="description" content="<%= movie.engname %> movie add review and sotry cast rewatch value rating">
-    <link rel="stylesheet" href="../../public/css/movie.css">
-    <link rel="stylesheet" href="../../public/css/auth.css">
+    <link rel="stylesheet" href="/css/movie.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
@@ -23,7 +23,7 @@
                 <% if(movie.moviePoster ) { %>
                     <img data-src="/<%= movie.moviePoster %>" alt=" <%= movie.name %> Poster" class="lazy-photo">
                     <% }else { %>
-                        <img data- src="../../public/images/movies/poster/mission.jpg" alt=" <%= movie.name %> Poster"
+                        <img data- src="/images/movies/poster/mission.jpg" alt=" <%= movie.name %> Poster"
                             class="lazy-photo">
                 <% } %>
             </div>

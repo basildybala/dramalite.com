@@ -1,5 +1,5 @@
 <%- include('../partials/header'); -%>
-    <link rel="stylesheet" href="../../public/css/movie.css">
+    <link rel="stylesheet" href="/css/movie.css">
 
 
     <title><%= movie.engname %> Movie Cast, Story, Review, Photos, Videos,OTT Watch</title>
@@ -35,7 +35,7 @@
                 <% if(movie.moviePoster ) { %>
                     <img data-src="/<%= movie.moviePoster %>" alt=" <%= movie.name %> Poster" class="lazy-photo">
                     <% }else { %>
-                        <img data-src="../../public/images/movies/id/<%= movie._id  %>.jpg" alt=" <%= movie.name %> Poster"
+                        <img data-src="/images/movies/id/<%= movie._id  %>.jpg" alt=" <%= movie.name %> Poster"
                             class="lazy-photo">
                 <% } %>
             </div>
@@ -264,7 +264,7 @@
                         <% if(movie.actimg1) { %>
                         <img class="lazy-photo" data-src="/<%= movie.actimg1 %>" alt=" {{movie.actorname1}}.jpg" />
                         <% }else{ %>
-                            <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid1 %>.jpg" alt=" {{movie.actorname1}}.jpg" />
+                            <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid1 %>.jpg" alt=" {{movie.actorname1}}.jpg" />
                         <% } %>   
                         <h6><%= movie.actorname1 %></h6>
                         <p><%= movie.mvactorname1 %></p>
@@ -285,7 +285,7 @@
                             <% if(movie.actimg2) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg2 %>" alt=" {{movie.actorname2}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid2 %>.jpg" alt=" {{movie.actorname2}}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid2 %>.jpg" alt=" {{movie.actorname2}}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname2 %></h6>
                             <p><%= movie.mvactorname2 %></p>
@@ -306,7 +306,7 @@
                             <% if(movie.actimg3) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg3 %>" alt=" {{movie.actorname3}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid3 %>.jpg" alt=" {{movie.actorname3}}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid3 %>.jpg" alt=" {{movie.actorname3}}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname3 %></h6>
                             <p><%= movie.mvactorname3 %></p>
@@ -327,7 +327,7 @@
                             <% if(movie.actimg4) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg4 %>" alt=" {{movie.actorname4}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid4 %>.jpg" alt=" {{movie.actorname4}}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid4 %>.jpg" alt=" {{movie.actorname4}}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname4 %></h6>
                             <p><%= movie.mvactorname4 %></p>
@@ -342,7 +342,7 @@
                             <% if(movie.actimg5) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg5 %>" alt=" {{movie.actorname5}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid5 %>.jpg" alt=" {{movie.actorname5}}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid5 %>.jpg" alt=" {{movie.actorname5}}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname5 %></h6>
                             <p><%= movie.mvactorname5 %></p>
@@ -357,7 +357,7 @@
                             <% if(movie.actimg6) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg6 %>" alt=" {{movie.actorname6}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid6 %>.jpg" alt=" {{movie.actorname6}}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid6 %>.jpg" alt=" {{movie.actorname6}}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname6 %></h6>
                             <p><%= movie.mvactorname6 %></p>
@@ -372,7 +372,7 @@
                             <% if(movie.actimg7) { %>
                             <img class="lazy-photo" data-src="/<%= movie.actimg7 %>" alt=" {{movie.actorname7}}.jpg" />
                             <% }else{ %>
-                                <img class="lazy-photo" data-src="../../public/images/actor/id/<%= movie.actid7 %>.jpg" alt=" {{movie.actorname47}.jpg" />
+                                <img class="lazy-photo" data-src="/images/actor/id/<%= movie.actid7 %>.jpg" alt=" {{movie.actorname47}.jpg" />
                             <% } %>   
                             <h6><%= movie.actorname7 %></h6>
                             <p><%= movie.mvactorname7 %></p>
