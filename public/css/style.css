@@ -22,7 +22,7 @@ font-family: 'Varela Round', sans-serif;
     margin: 0;
 } */
 .web-nav-bar{
-    width: 100%;
+    width: 105%;
     height: 60px;
     display: flex;
     box-shadow:rgb(0 0 0 / 16%) 0 0 6px;
