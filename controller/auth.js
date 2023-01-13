@@ -193,7 +193,7 @@ exports.login = async (req, res, next) => {
             userId: user._id
         },
         process.env.JWT_SECRET,
-        { expiresIn: "20d" }
+        { expiresIn: '30d' }
     );
     //Cookiees CreATe    
     res.cookie("dltoken", token, {

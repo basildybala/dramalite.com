@@ -29,10 +29,10 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     if(file.fieldname==='userProfilePic') {
       let ext = path.extname(file.originalname)
-      return cb(null, shortid.generate() + '-' + Date.now()+ext)
+      return cb(null, shortid.generate() + '-' + Date.now())
     } 
     let ext = path.extname(file.originalname)
-    cb(null, shortid.generate() + '-' + file.originalname +ext)
+    cb(null, shortid.generate() + '-' + file.originalname )
   }
 });
 

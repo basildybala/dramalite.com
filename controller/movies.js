@@ -89,14 +89,16 @@ exports.updateMovie = async (req, res) => {
             actimg1, actimg2, actimg3, actimg4, actimg5, actimg6, actimg7, actorImages } = req.body
         var moviePoster;
         var releaseDate;
-
+        if(req.body.actorImages===null || req.body.actorImages === undefined){
+            actorImages=[]
+        }
+            console.log(req.body.actorImages)
         if(releasedate.length>=9){
             releaseDate=new Date(releasedate).getTime()
         }
         var whereToWatch = {
             ottName: ottName, ottImg: ottImg, ottUrl: ottUrl
         }
-  
         if (req.files.movieImages?.length > 0) {
             let path = "";
             req.files.movieImages.forEach(function (files, index, arr) {
