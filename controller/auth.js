@@ -199,7 +199,7 @@ exports.login = async (req, res, next) => {
     res.cookie("dltoken", token, {
         httpOnly: true,
         secure: true,
-        maxAge: 1000000,
+        maxAge: 1900000,
         //signed:true,
     });
     res.json({ complete: true, msg: "Success",url:redirectUrl });
