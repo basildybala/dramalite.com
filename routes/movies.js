@@ -7,24 +7,24 @@ const { uploadImage } = require('../middlewares/multer');
 const router = require('express').Router()
 
 //RENDER ADD MOVIE PAGE
-router.get('/add-movie',isAdmin,addMoviePage)
+router.get('/add-movie',isAuth,isAdmin,addMoviePage)
 
 
 //ADD MOVIE
-router.post('/add-movie',isAdmin,uploadImage.fields([{ name: "moviePoster", maxCount: 1 }, { name: "movieImages", maxCount: 20 }]),addMovie)
+router.post('/add-movie',isAuth,isAdmin,uploadImage.fields([{ name: "moviePoster", maxCount: 1 }, { name: "movieImages", maxCount: 20 }]),addMovie)
 
 //RENDER EDIT MOVIE PAGE
-router.get('/edit-movie/:movieId',isAdmin,editMoviePage)
+router.get('/edit-movie/:movieId',isAuth,isAdmin,editMoviePage)
 
 
 //EDIT MOVIE
-router.post('/edit-movie/:movieId',isAdmin,uploadImage.fields([{ name: "moviePoster", maxCount: 1 }, { name: "movieImages", maxCount: 20 }]),updateMovie)
+router.post('/edit-movie/:movieId',isAuth,isAdmin,uploadImage.fields([{ name: "moviePoster", maxCount: 1 }, { name: "movieImages", maxCount: 20 }]),updateMovie)
 
 //DELETE Movie
-router.get('/delete-movie/:movieId',isAdmin,deleteMovie)
+router.get('/delete-movie/:movieId',isAuth,isAdmin,deleteMovie)
 
 //SHOW ALL Movie
-router.get('/show-all-movies',isAdmin,showAllMoviesPage)
+router.get('/show-all-movies',isAuth,isAdmin,showAllMoviesPage)
 
 //GET ONE Movie
 router.get('/:movieId',isUser,showOneMovie)

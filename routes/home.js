@@ -1,7 +1,7 @@
 const { homePage ,downloadImage,malayalamMoviesPage, tamilMoviesPage, hindiMoviesPage, teluguMoviesPage, englishMoviesPage, kannadaMoviesPage
 ,adminPage} = require('../controller/home');
 const { searchMoviePage, searchMovie, termsConditionsPage, privacyPolicyPage, contactPage, latestUpdate, nextRelease, lastRelease } = require('../controller/movies');
-const { isUser, isAdmin } = require('../middlewares/auth');
+const { isUser, isAdmin, isAuth } = require('../middlewares/auth');
 
 const router = require('express').Router()
 
@@ -28,7 +28,7 @@ router.get('/kannada-movies',isUser,kannadaMoviesPage)
 router.get('/image/download',isUser,downloadImage)
 
 //ADMIN PAGE
-router.get('/devadmin',isUser,isAdmin,adminPage)
+router.get('/devadmin',isAuth,isAdmin,adminPage)
 
 //SEARCH MOVIE
 router.get('/search-movie',isUser,searchMoviePage)
