@@ -27,7 +27,7 @@
             <div class="actor-card">
                 <div class="part-one">
                     <% if(celebrity.profilePic ) { %>
-                        <img class="lazy=photo" data-src="/<%= celebrity.profilePic %>" alt=" <%= celebrity.actorname %> Profile"
+                        <img class="lazy-photo" data-src="/<%= celebrity.profilePic %>" alt=" <%= celebrity.actorname %> Profile"
                         srcset="">
                     <% }else { %>
                         <img class="lazy-photo" data-src="/images/actor/id/<%= celebrity._id %>.jpg" alt=" <%= celebrity.actorname %> Profile"
@@ -115,7 +115,7 @@
                 </div>
                 <div class="dettails">
                     <p class="cutoff-text">
-                        <%= celebrity.biography %>
+                        <%- celebrity.biography %>
                     </p>
                     <!-- <input class="expand-btn" type="checkbox"> -->
                 </div>

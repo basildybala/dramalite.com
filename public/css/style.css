@@ -315,7 +315,7 @@ hr{
 }
 .movies{
   width: 100px;
-  height: 170px;
+  height: 175px;
   margin: 0 5px;
   border: 1px solid rgba(0,0,0,.14);
 }
@@ -341,13 +341,14 @@ hr{
 .movie-s h2{
   font-family:'Poppins', sans-serif; 
   margin: 2px 0;
-  font-size: 14px;
+  font-size: 11px;
+  text-align: center;
   color: black;
 }
 .movie-s p{
   font-family:'Poppins', sans-serif; 
   margin: 0;
-  font-size: 11px;
+  font-size: 9px;
   color: black;
 }
 .other-sec {
