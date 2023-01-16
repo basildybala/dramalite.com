@@ -236,6 +236,7 @@
     margin-right: 4px;
     font-size: 15px;
     font-weight: 400;
+    color: #4e99df;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -267,7 +268,7 @@
     margin: 0;
     padding: 0;
     font-size: 13px;
-    font-family: 'Varela Round';
+    font-family: 'Poppins', sans-serif;
     color: #211818;
     font-weight: 900;
     text-align: center;

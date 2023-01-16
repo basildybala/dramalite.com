@@ -13,8 +13,25 @@
 <% }else { %>
     <meta property="og:image" content="https://dramalite.com/public/images/actor/id/<%= celebrity._id %>.jpg">
 <% } %>
-
-
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:image:alt" content="<%= celebrity.actorname %>" />
+<meta property="og:image:type" content="image/jpeg" />
+<script type="application/ld+json">
+    {"@context":"http://schema.org",
+    "@id":"<%= celebrity._id %>",
+    "@type":"Person",
+    "url":"https://dramalite.com/celebs/<%= celebrity._id %>",
+    "name":"<%= celebrity.actorname %>",
+    "image":{
+      "@type":"ImageObject",
+      "url":<% if(celebrity.profilePic ){ %>"https://dramalite.com/public/images/actor/profilePic/<%= celebrity.profilePic %>.jpg">
+    <% }else { %>"https://dramalite.com/public/images/actor/id/<%= celebrity._id %>.jpg"><% } %>
+    },
+    "description":"<%- celebrity.biography %>",
+    "birthDate":"<%- celebrity.age%>"
+      }
+</script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -67,7 +84,7 @@
                 </div>
             </div>
             <hr>
-
+            <% if( celebrity.instalink) { %>
             <div class="actor-dettails">
                 <div class="dettails-name">
                     <h2>Age</h2>
@@ -87,6 +104,7 @@
             </div>
 
             <hr>
+            <% } %>
             <div class="actor-dettails">
                 <div class="dettails-name">
                     <h2>Occupation</h2>
