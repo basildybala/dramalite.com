@@ -580,7 +580,7 @@ exports.getNextRelease=async(limit)=>{
     try {
         let dateNow=Date.now()
         const latestUpdate = await Movie.find({releaseDate:{$gte:dateNow}})
-        .sort("-releaseDate")
+        .sort("releaseDate")
         .limit(limit);
         return latestUpdate
     } catch (error) {

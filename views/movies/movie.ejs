@@ -27,12 +27,12 @@
     "@type":"Movie",
     "url":"https://dramalite.com/movie/<%= movie._id %>",
     "name":"<%= movie.name %>",
-    "image":"<%= movie.name %>",
+    "image":" <% if(movie.moviePoster ) { %>/<%= movie.moviePoster %><% }else { %>/images/movies/id/<%= movie._id  %>.jpg<% } %>",
     "description":"<%= movie.story %>",
-     "countryOfOrigin":{"@type":"Country","name":"Japan"},
-     "contentLocation":{"@type":"Place","name":"Japan"},
+     "countryOfOrigin":{"@type":"Country","name":"India"},
+     "contentLocation":{"@type":"Place","name":"India"},
      "alternateName":"<%= movie.engname %>",
-     "genre":<%= movie.genre %>,
+     "genre":"<%= movie.genre %>",
      "datePublished":"<% if(movie.releasedate ){ %><%= movie.releasedate %>
 <% }else{ %>Date not Announced<% } %>",
      "keywords":["<%= movie.tags %>"],
@@ -47,10 +47,14 @@
         <% }else{ %>0.0<% } %>},<% } %> 
      "actor":[
      {"@type":"Person","name":"<%= movie.actorname1 %>","url":"/celebs/<%= movie.actid1 %>"}<% if(movie.actorname2){ %>,
-     {"@type":"Person","name":"<%= movie.actorname2 %>","url":"/celebs/<%= movie.actid2 %>"},<% } %><% if(movie.actorname3){ %> 
-     {"@type":"Person","name":"<%= movie.actorname3 %>","url":"/celebs/<%= movie.actid3 %>"},<% } %><% if(movie.actorname4) { %> 
-     {"@type":"Person","name":"<%= movie.actorname4 %>","url":"/celebs/<%= movie.actid4 %>"},<% } %><% if(movie.actorname5) { %> 
-     {"@type":"Person","name":"<%= movie.actorname5 %>","url":"/celebs/<%= movie.actid5 %>"},<% } %><% if(movie.actorname6) { %> 
+     {"@type":"Person","name":"<%= movie.actorname2 %>","url":"/celebs/<%= movie.actid2 %>"}
+     <% } %><% if(movie.actorname3){ %> ,
+     {"@type":"Person","name":"<%= movie.actorname3 %>","url":"/celebs/<%= movie.actid3 %>"}
+     <% } %><% if(movie.actorname4) { %> ,
+     {"@type":"Person","name":"<%= movie.actorname4 %>","url":"/celebs/<%= movie.actid4 %>"}
+     <% } %><% if(movie.actorname5) { %> ,
+     {"@type":"Person","name":"<%= movie.actorname5 %>","url":"/celebs/<%= movie.actid5 %>"}
+     <% } %><% if(movie.actorname6) { %> ,
      {"@type":"Person","name":"<%= movie.actorname6 %>","url":"/celebs/<%= movie.actid6 %>""}
      <% } %>  
      ]}

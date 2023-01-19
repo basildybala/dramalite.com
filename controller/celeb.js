@@ -14,7 +14,7 @@ exports.addCelebPage = async (req, res) => {
 
 exports.addCeleb = async (req, res) => {
     try {
-        let { actorname, language, age, yearactive, occupation, instalink, twitlink, biography } = req.body
+        let { actorname, language, age, yearactive, occupation, instalink, twitlink, biography ,nationality,hometown,nickname} = req.body
         var profilePic;
         if (req.files.actorImages?.length > 0) {
             let path = "";
@@ -26,14 +26,14 @@ exports.addCeleb = async (req, res) => {
             profilePic = req.files.actorProfilePic[0].path
             let actor = await new Actor({
                 actorname, language, age, yearactive, occupation, instalink, twitlink, biography,
-                images: actorImages, profilePic
+                images: actorImages, profilePic,nationality,hometown,nickname
             })
             let saveActor= await actor.save()
             return res.redirect(`/celebs/${saveActor._id}`)
         } else {
             profilePic = req.files.actorProfilePic[0]?.path
             let actor = await new Actor({
-                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, profilePic
+                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, profilePic,nationality,hometown,nickname
             })
             let saveActor= await actor.save()
             return res.redirect(`/celebs/${saveActor._id}`)
@@ -48,7 +48,7 @@ exports.addCeleb = async (req, res) => {
 exports.editCelebrity = async (req, res) => {
     try {
         let celebId = req.params.celebId
-        let { actorname, language, age, yearactive, occupation, instalink, twitlink, biography } = req.body
+        let { actorname, language, age, yearactive, occupation, instalink, twitlink, biography,nationality,hometown,nickname } = req.body
         var profilePic;
         console.log(req.body)
         if (req.files.actorImages?.length > 0) {
@@ -59,7 +59,7 @@ exports.editCelebrity = async (req, res) => {
             path = path.substring(0, path.lastIndexOf(","));
             var actorImages = path.split(",");
             let actor = await Actor.findByIdAndUpdate(celebId, {
-                actorname, language, age, yearactive, occupation, instalink, twitlink, biography,
+                actorname, language, age, yearactive, occupation, instalink, twitlink, biography,nationality,hometown,nickname
             })
            await Actor.findByIdAndUpdate(
                 celebId,
@@ -78,7 +78,7 @@ exports.editCelebrity = async (req, res) => {
             var actorImages = path.split(",");
             profilePic = req.files.actorProfilePic[0].path
             let actor = await Actor.findByIdAndUpdate(celebId, {
-                actorname, language, age, yearactive, occupation, instalink, twitlink, biography,profilePic
+                actorname, language, age, yearactive, occupation, instalink, twitlink, biography,profilePic,nationality,hometown,nickname
             })
             await Actor.findByIdAndUpdate(
                 celebId,
@@ -91,12 +91,12 @@ exports.editCelebrity = async (req, res) => {
         } else if (req.files.actorProfilePic?.length > 0) {
             profilePic = req.files.actorProfilePic[0]?.path
             let actor = await Actor.findByIdAndUpdate(celebId, {
-                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, profilePic
+                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, profilePic,nationality,hometown,nickname
             })
             return res.redirect(`/celebs/${actor._id}`)
         } else {
             let actor = await Actor.findByIdAndUpdate(celebId, {
-                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, images: req.body.actorImages
+                actorname, language, age, yearactive, occupation, instalink, twitlink, biography, images: req.body.actorImages,nationality,hometown,nickname
             })
             return res.redirect(`/celebs/${actor._id}`)
         }

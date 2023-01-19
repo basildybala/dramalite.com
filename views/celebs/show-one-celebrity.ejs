@@ -17,31 +17,48 @@
 <meta property="og:image:height" content="1080" />
 <meta property="og:image:alt" content="<%= celebrity.actorname %>" />
 <meta property="og:image:type" content="image/jpeg" />
-<script type="application/ld+json">
-    {"@context":"http://schema.org",
-    "@id":"<%= celebrity._id %>",
-    "@type":"Person",
-    "url":"https://dramalite.com/celebs/<%= celebrity._id %>",
-    "name":"<%= celebrity.actorname %>",
-    "image":{
-      "@type":"ImageObject",
-      "url":<% if(celebrity.profilePic ){ %>"https://dramalite.com/public/images/actor/profilePic/<%= celebrity.profilePic %>.jpg">
-    <% }else { %>"https://dramalite.com/public/images/actor/id/<%= celebrity._id %>.jpg"><% } %>
-    },
-    "description":"<%- celebrity.biography %>",
-    "birthDate":"<%- celebrity.age%>"
-      }
-</script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/actor.css">
 
-
+<style>
+    .actor-sec-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .celeb-img{
+        width: 100%;
+        height: auto;
+    }
+    .celeb-img img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+</style>
     <div class="actor-main">
 
         <div class="fst-sec">
-            <div class="actor-card">
+            <div class="actor-sec-1">
+                <div class="blue-header">
+                    <h1>
+                        <%= celebrity.actorname %>
+                    </h1>
+                </div>
+                <div class="celeb-img">
+                    <% if(celebrity.profilePic ) { %>
+                        <img class="lazy-photo" data-src="/<%= celebrity.profilePic %>" alt=" <%= celebrity.actorname %> Profile"
+                        srcset="">
+                    <% }else { %>
+                        <img class="lazy-photo" data-src="/images/actor/id/<%= celebrity._id %>.jpg" alt=" <%= celebrity.actorname %> Profile"
+                        srcset="">
+                    <% } %>
+                </div>
+            </div>
+            <!-- <div class="actor-card">
                 <div class="part-one">
                     <% if(celebrity.profilePic ) { %>
                         <img class="lazy-photo" data-src="/<%= celebrity.profilePic %>" alt=" <%= celebrity.actorname %> Profile"
@@ -69,7 +86,7 @@
                         <a href="#movies-sec" class="btn btn-primary flex-grow-1">Movies</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="scd-sec">
 
@@ -84,22 +101,44 @@
                 </div>
             </div>
             <hr>
-            <% if( celebrity.instalink) { %>
+            <% if( celebrity.nickname) { %>
+                <div class="actor-dettails">
+                    <div class="dettails-name">
+                        <h2>Nick Name</h2>
+                    </div>
+                    <div class="dettails">
+                        <h3> <%- celebrity.nickname%></h3>
+                    </div>
+                </div>
+                <hr>
+                <% } %>
+                <% if( celebrity.nationality) { %>
+                    <div class="actor-dettails">
+                        <div class="dettails-name">
+                            <h2>Nationality</h2>
+                        </div>
+                        <div class="dettails">
+                            <h3> <%- celebrity.nationality%></h3>
+                        </div>
+                    </div>
+                    <hr>
+                <% } %>
+            <% if( celebrity.age) { %>
             <div class="actor-dettails">
                 <div class="dettails-name">
                     <h2>Age</h2>
                 </div>
                 <div class="dettails">
-                    <h3 id="ages"></h3>
+                    <h3 id="ages"> </h3>
                 </div>
             </div>
             <hr>
             <div class="actor-dettails">
                 <div class="dettails-name">
-                    <h2>Born</h2>
+                    <h2>Date of Birth</h2>
                 </div>
                 <div class="dettails">
-                    <h3 id="born"></h3>
+                    <h3 id="born"><%- celebrity.age%></h3>
                 </div>
             </div>
 
@@ -127,6 +166,17 @@
                 </div>
             </div>
             <hr>
+            <% if( celebrity.hometown) { %>
+                <div class="actor-dettails">
+                    <div class="dettails-name">
+                        <h2>Home Town</h2>
+                    </div>
+                    <div class="dettails">
+                        <h3> <%- celebrity.hometown%></h3>
+                    </div>
+                </div>
+                <hr>
+            <% } %>
             <div class="about-dettails">
                 <div class="dettails-name">
                     <h2>About</h2>
@@ -184,7 +234,7 @@
 
     <div class="img-sec" id="movies-sec">
         <div class="left-blue-header">
-            <h2>Movies</h2>
+            <h2>Movies List</h2>
             <a href="">View all</a>
         </div>
         <div class="movies-list">
@@ -219,17 +269,17 @@
 
         //BORN DATE CALCULATE
         let dob = '<%- celebrity.age%>'
-        function convert(str) {
+        // function convert(str) {
 
-            var date = new Date(str),
-                mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-                day = ("0" + date.getDate()).slice(-2);
-            return [date.getFullYear(), mnth, day].join("-");
-        }
-        let born = convert(dob)
-        let heading = document
-            .getElementById('born');
-        heading.innerText = born;
+        //     var date = new Date(str),
+        //         mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+        //         day = ("0" + date.getDate()).slice(-2);
+        //     return [date.getFullYear(), mnth, day].join("-");
+        // }
+        // let born = convert(dob)
+        // let heading = document
+        //     .getElementById('born');
+        // heading.innerText = born;
 
 
         function ageCalculator(dob) {
@@ -252,8 +302,8 @@
                 var age = Math.abs(year - 1970);
 
                 //display the calculated age  
-                document.getElementById("ages").innerHTML = age
-                return document.getElementById("age").innerHTML = age
+                document.getElementById("ages").innerHTML = age+' years'
+                return document.getElementById("age").innerHTML = age 
             }
 
         }
