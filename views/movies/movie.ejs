@@ -577,7 +577,7 @@
         <div class="movies">
           <a  href="/movie/<%= latestUpdate[i]._id %>">
           <div class="movie-s">
-            <img src="/<%= latestUpdate[i].moviePoster %>" alt="">
+            <img data-src="/<%= latestUpdate[i].moviePoster %>" class="lazy-photo" alt="<%= latestUpdate[i].name %>.jpg">
             <h2><%= latestUpdate[i].name %></h2>
             <p><%= latestUpdate[i].category %></p>
           </div>
@@ -600,7 +600,7 @@
         <div class="movies">
           <a  href="/movie/<%= nextRelease[i]._id %>">
           <div class="movie-s">
-            <img src="/<%= nextRelease[i].moviePoster %>" alt="">
+            <img data-src="/<%= nextRelease[i].moviePoster %>" class="lazy-photo" alt="<%= nextRelease[i].name %>.jpg">
             <h2><%= nextRelease[i].name %></h2>
             <p><%= nextRelease[i].releasedate %></p>
           </div>
