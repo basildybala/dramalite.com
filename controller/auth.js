@@ -149,7 +149,7 @@ exports.resendEmailVerificationToken = async (req, res) => {
     transport.sendMail({
       from: "dramalitebot@gmail.com",
       to: user.email,
-      subject: "Dramalire Email Verification",
+      subject: "Dramalite Email Verification",
       html: `
         <p>Your verification OTP</p>
         <h1>${OTP}</h1>
